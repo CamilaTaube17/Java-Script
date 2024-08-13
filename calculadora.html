@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora JS</title>
+
+    <script>
+        function calcula(operacao){
+            var valor1 = parseFloat(document.calc.valor1.value);  /* parse significa */
+            var valor2 = parseFloat(document.calc.valor2.value);
+            var result = eval(valor1 + operacao + valor2)
+
+            document.calc.resultado.value = result;
+        }
+        function setFocus(){
+            ducument.forms[0].valor1.focus();
+        }
+    </script>
+
+</head>
+<body onLoad="setFocus()">
+
+    <h1>Utilizando JS para criar Calculadora</h1>
+
+    <form name="calc" action="" method="POST">
+
+        <input type="text" name="valor1" value="" size="12"> <br>
+        <input type="text" name="valor2" value="" size="12"> <br>
+
+        <input type="button" name="" value=" + " onclick="calcula('+')">
+        <input type="button" name="" value=" - " onclick="calcula('-')">
+        <input type="button" name="" value=" X " onclick="calcula('*')"> 
+        <input type="button" name="" value=" / " onclick="calcula('/')">
+
+        <input type="text" name="resultado" value="" size="12">
+
+    </form>
+    
+</body>
+</html>
